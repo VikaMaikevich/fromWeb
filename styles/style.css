@@ -11,6 +11,10 @@
     text-decoration: none;
 }
 
+.body-container {
+    margin: 0 auto; /* Центрирование контента по горизонтали */
+    max-width: 1120px; /* Максимальная ширина контейнера */
+}
 /* ШРИФТЫ */
 
 @font-face {
@@ -114,6 +118,7 @@
 
 .title{
     padding-top: 24px;
+    padding-bottom: 24px;
 
 }
 
@@ -144,45 +149,68 @@
 /* навигация */
 
 .navigation{
-    margin-top: 24px;
+    padding: 0;
+    margin: 0 16px 0 16px;
 }
 .nav__list{
+    color: #7E7E82;
+    font-size: 16px;
+    font-style: normal;
+    font-family: "TT Lakes";
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
     display: flex;
     justify-content: space-between;
-    margin: 24px 0px;
-    overflow: auto;
-    white-space: nowrap;
+    list-style-type:none;
+    overflow-x: scroll; 
+    padding: 0;
+    margin-left: 0px;
   }
 
 .nav__list-item{
-    display: flex;
+    border: 2px solid transparent;
+    color: #7E7E82;
+    white-space: nowrap;
     margin-left: 16px;
-    align-items: center;
-    padding: 8px 12px;
-    min-width: fit-content; 
 }
 
-.nav__link{
-    color: #7e7e82;
+
+.nav__button{
+    background: none;
+    border: none;
+    cursor: pointer;
     font-size: 16px;
-    font-family: "TT Lakes";
+    padding: 8px 16.67px 8px 16.67px;
+    margin:0;
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: #7E7E82;
+    font-family: TT Lakes;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.2px;
+}
+/* ховер для всех элементов */
+.nav__list-item:focus,
+.nav__list-item:hover {
+  background-color:#FFF;
+  border-radius: 6px;
+  border-color: #B8FFEC;
 }
 
-.nav__list-item_selected{
-    border-radius: 6px;
-    border: 2px solid #b8ffec;
-    background: #fff;
-}
+.nav__list::-webkit-scrollbar {
+    display: none;
+  }
+
 
 
 /* Мейн-контент */
 
 
 .main-discription__text-all{
-    padding-top: 0;
     margin-left: 16px;
     margin-right: 16px;
 }
@@ -253,6 +281,7 @@
     .main-discription__text-all{
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
     }
 
     .main-discription__img{
@@ -311,8 +340,8 @@
         display: none;
     }
 
-    .nav__list-item_selected{
-        margin-left: 24px;
+    .nav__list-item {
+        margin-bottom: 0px;
     }
 
     .main-discription{
@@ -323,6 +352,7 @@
         justify-content: space-between;
         flex-wrap: nowrap;
         align-items: flex-start;
+        margin-top: 32px;
     }
 
     .third-text{
@@ -333,10 +363,6 @@
         max-width: 312px;
         align-content: space-between;
         overflow: hidden;
-    }
-
-    .nav__list{
-        margin-bottom: 32px;
     }
 
     .main-discription__text-all{
@@ -392,19 +418,21 @@
     }
 
     .navigation{
-        padding-left: 24px;
         overflow: visible;
         display: flex;
         flex-wrap: wrap;
-        width: 1063px;
-        height: 82px;
         flex-shrink: 0;
     }
     
     .nav__list{
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 0px;
+        align-content: start;
+    }
+
+    .nav__list-item{
+        margin-right: auto;
     }
 
     .title__text{
@@ -442,6 +470,7 @@
         font-weight: 500;
         line-height: 24px;
         gap: 8px;
+        cursor: pointer;
     }
 
     .text-all__text{
@@ -452,6 +481,7 @@
 
     .main-discription{
         align-items: center;
+        margin-top: 0px;
     }
 
     .main-discription__text-all{
